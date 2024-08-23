@@ -100,7 +100,30 @@
             <p>Manajemen waktu yang efektif adalah keterampilan yang dapat membantu kita menjadi lebih produktif dan mengurangi stres. Dengan mengelola waktu dengan baik, kita bisa menyelesaikan tugas lebih cepat dan memiliki waktu lebih banyak untuk bersantai atau melakukan hal-hal yang kita sukai. Salah satu cara terbaik untuk mengelola waktu adalah dengan membuat to-do list harian dan menentukan prioritas untuk tugas yang paling penting. Selain itu, hindari multitasking, karena ini bisa mengurangi fokus dan produktivitas.</p>
             <a href="#" class="read-more">Baca lebih lanjut...</a>
         </article>
-
+    </section>
+    <section>
+        <h2>Formulir Pendaftaran</h2>
+        <form>
+            <label for="name">Nama Lengkap:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="dob">Tanggal Lahir:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" minlength="8" required><br><br>
+            <label for="confirm_password">Konfirmasi password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9](10)"><br><br>
+            <label for="hobby">Hobi:</label>
+            <select id="hobby" name="hobby">
+                <option value="membaca">Membaca</option>
+                <option value="menulis">Menulis</option>
+                <option value="berolahraga">Berolahraga</option> 
+            </select><br><br>
+            <button type="submit">Daftar</button>
+        </form>
     </section>
 </head>
 <body>
