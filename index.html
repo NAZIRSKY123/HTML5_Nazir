@@ -140,6 +140,26 @@
         Your browser does not support the video tag.
             </video>
     </section>
+    <section>
+        <h2>Grafik dengan Canvas</h2>
+        <canvas id="myCanvas" width="400" height="400" style="border :lpx solid #000000;">
+        </canvas>
+
+        <script>
+            var canvas = document.getElementById ("myCanvas");
+            var ctx = canvas.getcontent ("2d");
+
+            // Menggabar lingkaran biru
+            ctx.beginpath();
+            ctx.arc(200, 200, 50, 0, 2 * Math.PI);
+            ctx.fillstyle = "blue";
+            ctx.fill();
+
+            //Menggamabar persegi panjang merah
+            ctx.fillstyle = "red";
+            ctx.fillRest(10, 10, 100, 100);
+</script>
+    </section>
 </head>
 <body>
     
