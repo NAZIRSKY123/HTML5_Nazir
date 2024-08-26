@@ -1,0 +1,19 @@
+<center>
+<section>
+    <h2>Grafik dengan Canvas</h2>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;">
+   </canvas>
+    <script>
+   var canvas = document.getElementById("myCanvas"); 
+   var ctx = canvas.getContext("2d");
+   // Menggambar lingkaran biru 
+   ctx.beginPath();
+   ctx.arc(200, 200, 50, 0, 2 * Math.PI);
+   ctx.fillStyle = "blue"; 
+   ctx.fill();
+   // Menggambar persegi panjang merah 
+   ctx.fillStyle = "red";
+   ctx.fillRect(10, 10, 100, 100);
+    </script>
+   </section>
+   </center>

@@ -1,0 +1,31 @@
+<center>
+<section>
+    <h2>Simpan Nama Pengguna</h2>
+    <label for="username">Masukkan Nama Anda:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <button onclick="saveName()">Simpan Nama</button> 
+   <button onclick="clearName()">Hapus Nama</button>
+    <p id="greeting"></p>
+    <script>
+    // Fungsi untuk menyimpan nama pengguna 
+    function saveName() {
+    var username = document.getElementById("username").value; 
+    localStorage.setItem("name", username); 
+    displayGreeting(); 
+    }
+    // Fungsi untuk menampilkan nama pengguna yang disimpan 
+    function displayGreeting() {
+    var storedName = localStorage.getItem("name"); 
+    if (storedName) {
+    document.getElementById("greeting").textContent = "Selamat datang, " + storedName + "!";
+    }
+    }
+    // Fungsi untuk menghapus nama yang disimpan 
+    function clearName() {
+    localStorage.removeItem("name");
+    document.getElementById("greeting").textContent = ""; }
+    // Menampilkan nama saat halaman dimuat 
+    window.onload = displayGreeting;
+    </script>
+   </section>
+</center>
