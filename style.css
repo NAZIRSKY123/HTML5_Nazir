@@ -21,7 +21,7 @@ body {
     font-weight: bold;
     float: left;
     font-family: monospace;
-    color: #3f3062;
+    color: #0d0d0e;
 }
 
 .menu {
@@ -38,8 +38,8 @@ nav {
     top: 0;
     background: #f1eded;
     z-index: 1;
-    border-bottom:1px solid #364f6b;
-    background-color:rgb(255, 102, 0);
+    border-bottom:1px solid #000000;
+    background-color:rgb(255, 0, 0);
 }
 
 nav ul {
