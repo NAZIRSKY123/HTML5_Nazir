@@ -1,73 +1,127 @@
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-    }
-    header {
-        background-color: #7ed9f5;
-        color: rgb(10, 10, 10);
-        text-align: center;
-        padding: 1px 0;
-    }
-    section {
-        max-width: 800px;
-        margin: 20px auto;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    article {
-        margin-bottom: 40px;
-    }
-    h2 {
-        color: #333;
-    }
-    p {
-        text-align: justify;
-    }
-    footer {
-        background-color: #000000;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-    .read-more {
-        color: #4CAF50;
-        text-decoration: none;
-    }
-</style>
-<center>
-<section>
-    <h2>Formulir Pendaftaran</h2>
-    <form>
-    <label for="name">Nama Lengkap:</label>
-    <input type="text" id="name" name="name" required><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-    <label for="dob">Tanggal Lahir:</label>
-    <input type="date" id="dob" name="dob"><br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" minlength="8" required><br> <br>
-    <label for="confirm_password">Konfirmasi Password:</label>
-    <input type="password" id="confirm_password" name="confirm_password" required><br><br>
-    <label for="phone">Nomor Telepon:</label>
-    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br><br>
-    <label for="hobby">Hobi:</label>
-    <select id="hobby" name="hobby">
-    <option value="membaca">Membaca</option>
-    <option value="menulis">Menulis</option>
-    <option value="berolahraga">Berolahraga</option>
-    </select><br><br>
-    <button type="submit">Daftar</button>
-    </form>
-   </section>
-   </center>
-   <bentuk>
-    <input type="button" value="Kembali!" onclick="history.back()">
-    </bentuk>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group.inline {
+            display: flex;
+            align-items: center;
+        }
+        .form-group.inline label {
+            margin: 0 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulir Pendaftaran</h1>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="kelamin">Jenis Kelamin:</label>
+                <div class="inline">
+                    <input type="radio" id="laki-laki" name="kelamin" value="Laki-laki" required>
+                    <label for="laki-laki">Laki-laki</label>
+                    <input type="radio" id="perempuan" name="kelamin" value="Perempuan">
+                    <label for="perempuan">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="negara">Negara:</label>
+                <select id="negara" name="negara" required>
+                    <option value="">Pilih negara</option>
+                    <option value="indonesia">Indonesia</option>
+                    <option value="malaysia">Malaysia</option>
+                    <option value="singapura">Singapura</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="komentar">Komentar:</label>
+                <textarea id="komentar" name="komentar" rows="4" placeholder="Tulis komentar anda"></textarea>
+            </div>
+
+            <div class="form-group inline">
+                <input type="checkbox" id="setuju" name="setuju" required>
+                <label for="setuju">Saya setuju dengan syarat dan ketentuan.</label>
+            </div>
+
+            <button type="submit">Daftar</button>
+        </form>
+    </div>
+
+</body>
+</html>
