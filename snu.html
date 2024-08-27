@@ -1,78 +1,95 @@
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-    }
-    header {
-        background-color: #7ed9f5;
-        color: rgb(10, 10, 10);
-        text-align: center;
-        padding: 1px 0;
-    }
-    section {
-        max-width: 800px;
-        margin: 20px auto;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    article {
-        margin-bottom: 40px;
-    }
-    h2 {
-        color: #333;
-    }
-    p {
-        text-align: justify;
-    }
-    footer {
-        background-color: #000000;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-    .read-more {
-        color: #4CAF50;
-        text-decoration: none;
-    }
-</style>
-<center>
-<section>
-    <h2>Simpan Nama Pengguna</h2>
-    <label for="username">Masukkan Nama Anda:</label>
-    <input type="text" id="username" name="username"><br><br>
-    <button onclick="saveName()">Simpan Nama</button> 
-   <button onclick="clearName()">Hapus Nama</button>
-    <p id="greeting"></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simpan Nama Pengguna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.hapus {
+            background-color: #dc3545;
+            margin-top: 10px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #pesan {
+            text-align: center;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
     <script>
-    // Fungsi untuk menyimpan nama pengguna 
-    function saveName() {
-    var username = document.getElementById("username").value; 
-    localStorage.setItem("name", username); 
-    displayGreeting(); 
-    }
-    // Fungsi untuk menampilkan nama pengguna yang disimpan 
-    function displayGreeting() {
-    var storedName = localStorage.getItem("name"); 
-    if (storedName) {
-    document.getElementById("greeting").textContent = "Selamat datang, " + storedName + "!";
-    }
-    }
-    // Fungsi untuk menghapus nama yang disimpan 
-    function clearName() {
-    localStorage.removeItem("name");
-    document.getElementById("greeting").textContent = ""; }
-    // Menampilkan nama saat halaman dimuat 
-    window.onload = displayGreeting;
+        // Fungsi untuk menyimpan nama pengguna
+        function simpanNama() {
+            const namaPengguna = document.getElementById("nama").value;
+            if (namaPengguna) {
+                localStorage.setItem("namaPengguna", namaPengguna);
+                document.getElementById("pesan").textContent = "Nama disimpan!";
+            } else {
+                document.getElementById("pesan").textContent = "Masukkan nama terlebih dahulu.";
+            }
+        }
+
+        // Fungsi untuk menghapus nama pengguna
+        function hapusNama() {
+            localStorage.removeItem("namaPengguna");
+            document.getElementById("pesan").textContent = "Nama dihapus!";
+            document.getElementById("nama").value = "";
+        }
+
+        // Memuat nama pengguna yang tersimpan saat halaman dibuka
+        window.onload = function() {
+            const namaPengguna = localStorage.getItem("namaPengguna");
+            if (namaPengguna) {
+                document.getElementById("nama").value = namaPengguna;
+                document.getElementById("pesan").textContent = "Nama pengguna ditemukan!";
+            }
+        }
     </script>
-   </section>
-</center>
-<bentuk>
-    <input type="button" value="Kembali!" onclick="history.back()">
-    </bentuk>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Simpan Nama Pengguna</h1>
+        <input type="text" id="nama" placeholder="Masukkan nama anda">
+        <button onclick="simpanNama()">Simpan</button>
+        <button class="hapus" onclick="hapusNama()">Hapus</button>
+        <p id="pesan"></p>
+    </div>
+
+</body>
+</html>
