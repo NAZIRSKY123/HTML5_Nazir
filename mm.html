@@ -1,62 +1,32 @@
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-    }
-    header {
-        background-color: #7ed9f5;
-        color: rgb(10, 10, 10);
-        text-align: center;
-        padding: 1px 0;
-    }
-    section {
-        max-width: 800px;
-        margin: 20px auto;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    article {
-        margin-bottom: 40px;
-    }
-    h2 {
-        color: #333;
-    }
-    p {
-        text-align: justify;
-    }
-    footer {
-        background-color: #000000;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-    .read-more {
-        color: #4CAF50;
-        text-decoration: none;
-    }
-</style>
-<center>
-<section>
-    <h2>Multimedia</h2>
-    <h1>Audio</h3>
-    <audio controls>
-    <source src="videoplayback.weba" type="audio/mpeg"> 
-   Your browser does not support the audio element.
-    </audio>
-    <h3>Video</h3>
-    <video width="320" height="240" controls>
-    <source src="Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez) [Official Video].mp4" type="video/mp4">
-    Your browser does not support the video tag.
-   </video>
-   </section>
-</center>
-<bentuk>
-    <input type="button" value="Kembali!" onclick="history.back()">
-    </bentuk>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Video dan Audio</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multimedia: Video dan Audio</h1>
+
+        <!-- Bagian Video -->
+        <div class="video-section">
+            <h2>Video</h2>
+            <video controls>
+                <source src="Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez) [Official Video].mp4" type="video/mp4">
+                Browser Anda tidak mendukung elemen video.
+            </video>
+        </div>
+
+        <!-- Bagian Audio -->
+        <div class="audio-section">
+            <h2>Audio</h2>
+            <audio controls>
+                <source src="videoplayback.weba" type="audio/mp3">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+        </div>
+    </div>
+</body>
+</html>
